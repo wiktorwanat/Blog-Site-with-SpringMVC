@@ -1,12 +1,12 @@
 package com.blog.entity;
 
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
-
 
 @Entity
 public class Post {
@@ -22,19 +22,9 @@ public class Post {
 	@Size(max=20000, message="Message cannot be longer than 20000 characters!")
 	//@NotEmpty
 	private String text;
-	
+	private Date postDate;
 	private int authorId;
 	
-	
-	public Post() {System.out.println("enitity post");}
-	
-	public Post(int postId, String title, String text, int authorId) {
-		super();
-		this.postId = postId;
-		this.title = title;
-		this.text = text;
-		this.authorId = authorId;
-	}
 	public int getPostId() {
 		return postId;
 	}
@@ -53,12 +43,30 @@ public class Post {
 	public void setText(String text) {
 		this.text = text;
 	}
+	public Date getPostDate() {
+		return postDate;
+	}
+	public void setPostDate(Date postDate) {
+		this.postDate = postDate;
+	}
 	public int getAuthorId() {
 		return authorId;
 	}
 	public void setAuthorId(int authorId) {
 		this.authorId = authorId;
 	}
-	
-
+	public Post() {}
+	public Post(int postId, String title, String text, Date postDate, int authorId) {
+		super();
+		this.postId = postId;
+		this.title = title;
+		this.text = text;
+		this.postDate = postDate;
+		this.authorId = authorId;
+	}
+	@Override
+	public String toString() {
+		return String.format("Post [postId=%s, title=%s, text=%s, postDate=%s, authorId=%s]", postId, title, text,
+				postDate, authorId);
+	}
 }
