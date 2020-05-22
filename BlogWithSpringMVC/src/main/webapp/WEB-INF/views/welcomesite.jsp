@@ -7,10 +7,10 @@
 </head>
 <body>
 <div class="container">
-	hi ${username}
+	hi ${login}
 </div>
 <br />
- <a href="/posts/${username}">Click here</a> to see all of your posts.
+ <a href="/posts/${login}">Click here</a> to see all of your posts.
  <br />
  	<div class="container">
 		<a type="button" class="btn btn-success" href="/posts/addpost">Add post</a>

@@ -22,12 +22,12 @@ public class LoginController {
 	
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String userLogin(ModelMap model,@RequestParam String username,@RequestParam String userpassword) {
-		if(loginService.checkUserData(username, userpassword)) {
-			model.put("username", username);
+	public String userLogin(ModelMap model,@RequestParam String login,@RequestParam String password) {
+		if(loginService.checkUserData(login, password)) {
+			model.put("username", login);
 			return "welcomesite";
 		}else {
-			model.put("wrongData", "Check your login and password ! ");
+			model.put("message", "Check your login and password ! ");
 			return "loginsite";
 		}
 	}

@@ -8,9 +8,9 @@ public class LoginService {
 	
 	private Logger logger=Logger.getLogger(LoginService.class);
 	
-	public boolean checkUserData(String userLogin,String userPassword) {
-		logger.info("login : "+userLogin+" password : "+userPassword);
-		return userLogin.equals("root") && userPassword.equals("root");
+	public boolean checkUserData(String login,String password) {
+		logger.info("login : "+login+" password : "+password);
+		return login.equals("root") && password.equals("root");
 		}
 	}
 

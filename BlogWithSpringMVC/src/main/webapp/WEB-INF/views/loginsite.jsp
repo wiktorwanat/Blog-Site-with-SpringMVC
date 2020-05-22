@@ -16,23 +16,24 @@
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Username:</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
+                                <input type="text" name="login" id="username" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Password:</label><br>
-                                <input type="text" name="userpassword" id="password" class="form-control">
+                                <input type="text" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                             </div>
                             <div id="register-link" class="text-right">
-                                <a href="#" class="text-info">Register here</a>
+                                <a href="/createaccount" class="text-info">Register here</a>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        <h2 class="text-center text-red pt-5">${message}</h2>
     </div>
 </body>
 </html>

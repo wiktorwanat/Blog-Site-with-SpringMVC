@@ -6,7 +6,7 @@
 	<display-name>Blog Wiktora</display-name>
 
 	<welcome-file-list>
-		<welcome-file>posts.do</welcome-file>
+		<welcome-file>posts</welcome-file>
 	</welcome-file-list>
 
     <servlet>
