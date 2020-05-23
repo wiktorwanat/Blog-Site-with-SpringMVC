@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.blog.entity.User;
 import com.blog.service.UserService;
 
 @Controller
 public class UserController {
 	
 	@Autowired
-	UserService service;
+	UserService userService;
 	
 	@RequestMapping(value="/createaccount",method = RequestMethod.GET)
 	public String showRegisterPage() {
@@ -22,7 +23,7 @@ public class UserController {
 	}
 	@RequestMapping(value="/createaccount",method = RequestMethod.POST)
 	public String createAccount(ModelMap model,@RequestParam String login,@RequestParam String password,@RequestParam String email) {
-		//function from service will be there , first need to create datebase and connection with DB
+		userService.addUser(new User(login,password,email));
 		model.put("message","Account created succesfully!");
 		return "redirect:/login";
 	}

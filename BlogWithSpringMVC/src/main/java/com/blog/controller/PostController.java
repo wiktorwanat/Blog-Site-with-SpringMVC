@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.blog.entity.Post;
 import com.blog.service.PostService;
 
 @Controller
@@ -19,7 +20,7 @@ public class PostController {
 
 	@RequestMapping(value="/posts",method = RequestMethod.GET)
 	public String showAllPosts(ModelMap model) {
-		model.addAttribute("posts",postService.findall());
+		model.addAttribute("posts",postService.getPosts());
 		return "posts";
 	}
 	@RequestMapping(value="/posts/addpost",method=RequestMethod.GET)
@@ -29,7 +30,8 @@ public class PostController {
 	}
 	@RequestMapping(value="/posts/addpost",method=RequestMethod.POST)
 	public String addingPostsRedirectToPosts(ModelMap model,@RequestParam String title,@RequestParam String text) {
-		postService.addPost(title, text, new Date(), 124);
+		Post addPost=new Post(123,title,text,new Date(), 124);
+		postService.addPost(addPost);
 		return "redirect:/posts";
 	}
 //	@RequestMapping(value="/posts/{username}",method = RequestMethod.GET)

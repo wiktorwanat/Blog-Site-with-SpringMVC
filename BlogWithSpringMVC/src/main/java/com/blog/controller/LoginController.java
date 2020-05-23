@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.blog.service.LoginService;
+import com.blog.service.UserService;
 
 @Controller
 public class LoginController {
 	
 	@Autowired
-	LoginService loginService;
+	UserService UserService;
 	
 	@RequestMapping(value="/login",method = RequestMethod.GET)
 	public String showLoginPage() {
@@ -23,7 +23,7 @@ public class LoginController {
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public String userLogin(ModelMap model,@RequestParam String login,@RequestParam String password) {
-		if(loginService.checkUserData(login, password)) {
+		if(UserService.checkUserLoginData(login, password)==true) {
 			model.put("username", login);
 			return "welcomesite";
 		}else {

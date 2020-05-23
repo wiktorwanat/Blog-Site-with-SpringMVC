@@ -1,14 +1,15 @@
-package com.blog.service;
+package com.blog.dao;
 
+import java.util.List;
+
+import com.blog.entity.Post;
 import com.blog.entity.User;
 
-public interface UserService {
-	
+public interface UserDAO {
+
 	public void addUser(User user);
 	
 	public User getUserByLogin(String login);
-	
-	public boolean checkUserLoginData(String login,String password);
 	
 	public void deleteUser(int userId);
 	

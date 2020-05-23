@@ -8,7 +8,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@NamedQuery(name="find_all_users",query="select u from User u")
+@Table(name="user")
 public class User {
 	@Id
 	@GeneratedValue
@@ -20,14 +20,14 @@ public class User {
 	private Integer numberOfPosts;
 	
 	public User() {};
-	public User( String login, String password, String email, Integer numberOfPosts) {
+	public User( String login, String password, String email) {
 		super();
-
 		this.login = login;
 		this.password = password;
 		this.email = email;
-		this.numberOfPosts = numberOfPosts;
+		this.numberOfPosts =0;
 	}
+
 	public long getUserId() {
 		return userId;
 	}

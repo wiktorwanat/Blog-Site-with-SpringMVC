@@ -2,25 +2,26 @@ package com.blog.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 @Entity
+@Table(name="post")
 public class Post {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int postId;
 	
-	//@Column(unique=true)
-	//@NotEmpty
+	@Column(unique=true)
 	private String title;
-	//@Column(length=20000)
+	
 	@Size(max=20000, message="Message cannot be longer than 20000 characters!")
-	//@NotEmpty
 	private String text;
 	private Date postDate;
 	private int authorId;
@@ -56,6 +57,7 @@ public class Post {
 		this.authorId = authorId;
 	}
 	public Post() {}
+	
 	public Post(int postId, String title, String text, Date postDate, int authorId) {
 		super();
 		this.postId = postId;
@@ -64,6 +66,7 @@ public class Post {
 		this.postDate = postDate;
 		this.authorId = authorId;
 	}
+	
 	@Override
 	public String toString() {
 		return String.format("Post [postId=%s, title=%s, text=%s, postDate=%s, authorId=%s]", postId, title, text,
