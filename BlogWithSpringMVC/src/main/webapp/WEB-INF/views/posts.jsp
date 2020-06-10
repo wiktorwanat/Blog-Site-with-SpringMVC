@@ -9,7 +9,7 @@
 <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	    		rel="stylesheet">
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
  <div class="container">
 	<table class="table table-striped">
 		<thead>
@@ -27,7 +27,7 @@
 					<td>${Post.postId}</td>
 					<td>${Post.title}</td>
 					<td>${Post.text}</td>
-					<td><fmt:formatDate pattern="dd/MM/yyyy"
+					<td><fmt:formatDate pattern="yyyy-MM-dd"
 							value=${post.postDate} /></td>
 					<td>${Post.authorId}</td>
 				</tr>

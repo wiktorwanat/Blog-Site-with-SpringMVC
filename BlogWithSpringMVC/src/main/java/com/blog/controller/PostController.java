@@ -30,12 +30,12 @@ public class PostController {
 	}
 	@RequestMapping(value="/posts/addpost",method=RequestMethod.POST)
 	public String addingPostsRedirectToPosts(ModelMap model,@RequestParam String title,@RequestParam String text) {
-		Post addPost=new Post(123,title,text,new Date(), 124);
+		Post addPost=new Post(123,title,text,(java.sql.Date) new Date(), 124);
 		postService.addPost(addPost);
 		return "redirect:/posts";
 	}
 //	@RequestMapping(value="/posts/{username}",method = RequestMethod.GET)
-//	public String showUserPosts(@PathVariable("uModelMap model) {
+//	public String showUserPosts(@PathVariable(ModelMap model) {
 //		model.addAttribute("posts",postService.findall());
 //		return "posts";
 //	}
