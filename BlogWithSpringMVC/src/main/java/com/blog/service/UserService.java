@@ -13,4 +13,6 @@ public interface UserService {
 	public void deleteUser(int userId);
 	
 	public User getUserById(int userId);
+	
+	public void updateUser(User user);
 }

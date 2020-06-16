@@ -24,7 +24,7 @@
       <a class="nav-link" href="/posts/{username}">My Posts</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" href="#">Account Settings</a>
+      <a class="nav-link disabled" href="/login/accountsettings">Account Settings</a>
     </li>
   </ul>
 </nav>

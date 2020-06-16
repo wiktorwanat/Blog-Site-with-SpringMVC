@@ -25,7 +25,6 @@ public class UserServiceImplementation implements UserService{
 	public boolean checkUserLoginData(String login,String password) {
 		User checkUser=getUserByLogin(login);
 		if(checkUser.getLogin().contentEquals(login)&&checkUser.getPassword().contentEquals(password)) {
-				System.out.println("tru2");
 				return true;
 			}	
 		
@@ -34,6 +33,9 @@ public class UserServiceImplementation implements UserService{
 	
 	public void deleteUser(int userId) {
 		userDAO.deleteUser(userId);
+	}
+	public void updateUser(User user) {
+		userDAO.updateUser(user);
 	}
 	
 }

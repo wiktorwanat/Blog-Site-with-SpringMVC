@@ -57,5 +57,13 @@ public class UserDAOImplementation implements UserDAO{
 			exc.getMessage();
 		}
 	}
+	public void updateUser(User user) {
+		try {
+			Session session=sessionFactory.getCurrentSession();
+			session.saveOrUpdate(user);
+		}catch(HibernateException exc) {
+			exc.getMessage();
+		}
+	}
 
 }

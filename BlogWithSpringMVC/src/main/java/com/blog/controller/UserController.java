@@ -28,4 +28,14 @@ public class UserController {
 		return "redirect:/login";
 	}
 	
+	@RequestMapping(value="/login/accountsettings",method = RequestMethod.GET)
+	public String showAccountSettings(ModelMap model) {
+		return "userSettings";
+	}
+	@RequestMapping(value="/login/accountsettings",method = RequestMethod.POST)
+	public String updateAccountSettings(ModelMap model,@RequestParam String login,@RequestParam String password,@RequestParam String email) {
+		userService.updateUser(new User(login,password,email));
+		return "redirect:/login";
+	}
+	
 }
