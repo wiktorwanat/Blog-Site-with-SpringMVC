@@ -29,13 +29,18 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/login/accountsettings",method = RequestMethod.GET)
-	public String showAccountSettings(ModelMap model) {
+	public String showAccountSettings() {
 		return "userSettings";
 	}
-	@RequestMapping(value="/login/accountsettings",method = RequestMethod.POST)
-	public String updateAccountSettings(ModelMap model,@RequestParam String login,@RequestParam String password,@RequestParam String email) {
+	@RequestMapping(params="update",value="/login/accountsettings",method = RequestMethod.POST)
+	public String updateAccountSettings(@RequestParam String login,@RequestParam String password,@RequestParam String email) {
 		userService.updateUser(new User(login,password,email));
 		return "redirect:/login";
+	}
+	@RequestMapping(params="delete",value="/login/accountsettings",method = RequestMethod.POST)
+	public String deleteAccount(@RequestParam String login) {
+		userService.deleteUser(login);
+		return "redirect:/posts";
 	}
 	
 }

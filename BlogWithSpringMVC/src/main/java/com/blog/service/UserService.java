@@ -12,6 +12,8 @@ public interface UserService {
 	
 	public void deleteUser(int userId);
 	
+	public void deleteUser(String login);
+	
 	public User getUserById(int userId);
 	
 	public void updateUser(User user);

@@ -19,7 +19,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-    <title>Laravel</title>
+    <title>Account Settings</title>
 </head>
 <body>
 
@@ -39,15 +39,13 @@
             <div class="col-md-8">
                     <div class="card">
                         <div class="card-body">
-                            <form name="my-form" onsubmit="return validform()" action="success.php" method="">
+                            <form name="my-form" method="post">
                                
-
-                                
 
                                 <div class="form-group row">
                                     <label for="user_name" class="col-md-4 col-form-label text-md-right">Login</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="user_name" class="form-control" name="username">
+                                        <input type="text" id="login" class="form-control" name="login">
                                     </div>
                                 </div>
 
@@ -56,23 +54,23 @@
                                 <div class="form-group row">
                                     <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="permanent_address" class="form-control" name="userpassword">
+                                        <input type="text" id="password" class="form-control" name="password">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Email</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="permanent_address" class="form-control" name="userEmail">
+                                        <input type="text" id="email" class="form-control" name="email">
                                     </div>
                                 </div>
 
                                 
 
                                     <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" value="update" name="update" class="btn btn-primary">
                                         Submit changes
                                         </button>
-                                        <button type="submit" class="btn btn-danger">
+                                        <button type="submit" value="delete" name="delete" class="btn btn-danger">
                                         Delete Account
                                         </button>
                                     </div>

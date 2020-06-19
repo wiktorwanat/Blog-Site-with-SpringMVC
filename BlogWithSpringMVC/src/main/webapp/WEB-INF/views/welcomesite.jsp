@@ -24,17 +24,17 @@
       <a class="nav-link" href="/posts/{username}">My Posts</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" href="/login/accountsettings">Account Settings</a>
+      <a class="nav-link" href="/login/accountsettings">Account Settings</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/logout">Logout</a>
     </li>
   </ul>
 </nav>
  	<div class="container">
 		<a type="button" class="btn btn-success" href="/posts/addpost">Add post</a>
-	</div>
+	</div>	
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<div class="container">
-		<button type="button" class="btn btn-danger">Delete Account</button>
-	</div>
 </body>
 </html>

@@ -34,6 +34,9 @@ public class UserServiceImplementation implements UserService{
 	public void deleteUser(int userId) {
 		userDAO.deleteUser(userId);
 	}
+	public void deleteUser(String login) {
+		userDAO.deleteUser(login);
+	}
 	public void updateUser(User user) {
 		userDAO.updateUser(user);
 	}

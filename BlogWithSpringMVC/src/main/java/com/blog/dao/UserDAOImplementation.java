@@ -57,6 +57,19 @@ public class UserDAOImplementation implements UserDAO{
 			exc.getMessage();
 		}
 	}
+	
+	@Override
+	public void deleteUser(String login) {
+		try {
+			User user=getUserByLogin(login);
+			Session session=sessionFactory.getCurrentSession();
+			User managedUser=(User) session.merge(user);
+			session.delete(managedUser);
+		}catch(HibernateException exc) {
+			exc.getMessage();
+		}
+	}
+	
 	public void updateUser(User user) {
 		try {
 			Session session=sessionFactory.getCurrentSession();
