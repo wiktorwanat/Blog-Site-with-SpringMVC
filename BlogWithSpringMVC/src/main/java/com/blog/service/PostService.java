@@ -16,6 +16,8 @@ public interface PostService {
 	
 	public List<Post> getPosts();
 	
+	public List<Post> getUserPosts(int userId);
+	
 	public void addPost(Post post);
 	
 	public Post getPost(int id);

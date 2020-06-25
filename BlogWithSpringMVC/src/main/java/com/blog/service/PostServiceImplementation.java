@@ -3,6 +3,7 @@ package com.blog.service;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,18 @@ public class PostServiceImplementation implements PostService{
 	
 	public void deletePost(int postId) {
 		postDAO.deletePost(postId);
+	}
+
+	@Override
+	public List<Post> getUserPosts(int userId) {
+		List<Post> allPosts=postDAO.getPosts();
+		List<Post> userPosts=new ArrayList();
+		for(Post p:allPosts) {
+			if(p.getAuthorId()==userId) {
+				userPosts.add(p);
+			}
+		}
+		return userPosts;
 	};
 
 }

@@ -39,7 +39,7 @@
             <div class="col-md-8">
                     <div class="card">
                         <div class="card-body">
-                            <form name="my-form" method="post">
+                            <form name="my-form" method="post" modelAttribute="currentUser">
                                
 
                                 <div class="form-group row">
@@ -74,6 +74,7 @@
                                         Delete Account
                                         </button>
                                     </div>
+                                    <p>You are logged in with email ${user.email}.</p>
                                 </div>
                             </form>
                         </div>

@@ -1,5 +1,6 @@
 package com.blog.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Query;
@@ -72,6 +73,4 @@ public class PostDAOImplementation implements PostDAO{
 			exc.getMessage();
 		}
 	}
-
-
 }

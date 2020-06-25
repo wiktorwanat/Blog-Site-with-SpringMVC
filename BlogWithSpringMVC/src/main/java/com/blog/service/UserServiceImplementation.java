@@ -23,12 +23,16 @@ public class UserServiceImplementation implements UserService{
 		return userDAO.getUserById(userId);
 	}
 	public boolean checkUserLoginData(String login,String password) {
-		User checkUser=getUserByLogin(login);
-		if(checkUser.getLogin().contentEquals(login)&&checkUser.getPassword().contentEquals(password)) {
+		if(login.isEmpty()!=true && password.isEmpty()!=true) {
+			User checkUser=getUserByLogin(login);
+			if(checkUser.getLogin().contentEquals(login)&&checkUser.getPassword().contentEquals(password)) {
 				return true;
-			}	
-		
+			}else {
+				return false;
+			}
+		}else {
 			return false;
+		}
 	}
 	
 	public void deleteUser(int userId) {
@@ -37,8 +41,9 @@ public class UserServiceImplementation implements UserService{
 	public void deleteUser(String login) {
 		userDAO.deleteUser(login);
 	}
-	public void updateUser(User user) {
+	public User updateUser(User user) {
 		userDAO.updateUser(user);
+		return user;
 	}
 	
 }

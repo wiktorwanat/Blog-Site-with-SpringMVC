@@ -21,7 +21,7 @@
       <a class="nav-link" href="/posts">Posts</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/posts/{username}">My Posts</a>
+      <a class="nav-link" href="/posts/{userId}">My Posts</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/login/accountsettings">Account Settings</a>
